@@ -1,0 +1,11 @@
+---
+- hosts: all
+  remote_user: root
+
+  tasks:
+    - name: get hostname
+      command: hostname
+
+    - name: get uptime
+      shell: uptime
+
