@@ -1,8 +1,8 @@
 ---
-  tasks:
-    - name: get hostname
-      command: hostname
-
-    - name: get uptime
-      shell: uptime
+- tasks:
+  - name: get hostname
+    command: hostname
+    
+  - name: get uptime
+    shell: uptime
 
