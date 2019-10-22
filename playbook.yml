@@ -1,9 +1,16 @@
 ---
 - hosts: all
   tasks:
-    - name: get hostname
-      command: hostname
-    
-    - name: get uptime
-      shell: uptime
+    - name: install ssm agent
+      become: yes
+      become_user: root
+      yum:
+        name: "https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_{{ url }}/amazon-ssm-agent.rpm"
+        state: present
 
+      # should be a handler, but this is just a test
+    - name: Starting SSM service    
+      service:     
+        name: amazon-ssm-agent     
+        enabled: yes     
+        state: started
