@@ -5,7 +5,7 @@
       become: yes
       become_user: root
       yum:
-        name: "https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_{{ url }}/amazon-ssm-agent.rpm"
+        name: "https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_arm64/amazon-ssm-agent.rpm"
         state: present
 
       # should be a handler, but this is just a test
